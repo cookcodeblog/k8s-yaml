@@ -18,18 +18,3 @@ spec:
       volumeMounts:
         - mountPath: "/data"
           name: "kuard-data"
-      resources:
-        requests:
-          cpu: "500m"
-          memory: "128Mi"
-        limits:
-          cpu: "1000m"
-          memory: "256Mi"
-      readinessProbe:
-        httpGet:
-          path: /ready
-          port: 8080
-        initialDelaySeconds: 30
-        timeoutSeconds: 1
-        periodSeconds: 10
-        failureThreshold: 3
