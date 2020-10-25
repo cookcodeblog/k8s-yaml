@@ -1,10 +1,14 @@
 [TOC]
 
-# Kubernetes mainfest yaml example
+# Kubernetes manifest yaml example
 
 
 
 ## Kubernetes Up & Running
+
+
+
+https://github.com/kubernetes-up-and-running/kuard
 
 
 
