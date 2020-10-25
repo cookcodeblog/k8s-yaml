@@ -6,11 +6,11 @@ spec:
   containers:
     - image: registry.cn-shenzhen.aliyuncs.com/cookcodeblog/kuard-amd64:1
       name: kuard
-      resources:
-        requests:
-          cpu: "500m"
-          memory: "128Mi"
       ports:
         - containerPort: 8080
           name: http
           protocol: TCP
+      resources:
+        requests:
+          cpu: "500m"
+          memory: "128Mi"

@@ -3,6 +3,11 @@ kind: Pod
 metadata:
   name: kuard
 spec:
+  volumes:
+    - name: "kuard-data"
+      nfs:
+        path: "/mnt/nfsdata"
+        server: "172.31.240.127"
   containers:
     - image: registry.cn-shenzhen.aliyuncs.com/cookcodeblog/kuard-amd64:1
       name: kuard
@@ -10,6 +15,9 @@ spec:
         - containerPort: 8080
           name: http
           protocol: TCP
+      volumeMounts:
+        - mountPath: "/data"
+          name: "kuard-data"
       resources:
         requests:
           cpu: "500m"
@@ -17,3 +25,11 @@ spec:
         limits:
           cpu: "1000m"
           memory: "256Mi"
+      readinessProbe:
+        httpGet:
+          path: /ready
+          port: 8080
+        initialDelaySeconds: 30
+        timeoutSeconds: 1
+        periodSeconds: 10
+        failureThreshold: 3

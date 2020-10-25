@@ -3,6 +3,10 @@ kind: Pod
 metadata:
   name: kuard
 spec:
+  volumes:
+    - name: "kuard-data"
+      hostPath:
+        path: "/var/lib/kuard"
   containers:
     - image: registry.cn-shenzhen.aliyuncs.com/cookcodeblog/kuard-amd64:1
       name: kuard
@@ -10,10 +14,6 @@ spec:
         - containerPort: 8080
           name: http
           protocol: TCP
-      resources:
-        requests:
-          cpu: "500m"
-          memory: "128Mi"
-        limits:
-          cpu: "1000m"
-          memory: "256Mi"
+      volumeMounts:
+        - mountPath: "/data"
+          name: "kuard-data"
