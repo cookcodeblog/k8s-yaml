@@ -6,7 +6,7 @@ spec:
   volumes:
     - name: "kuard-data"
       nfs:
-        path: "/mnt/nfsdata/kudard/data"
+        path: "/mnt/data/nfs/kudard/data"
         server: "172.31.240.127"
   containers:
     - image: registry.cn-shenzhen.aliyuncs.com/cookcodeblog/kuard-amd64:1
