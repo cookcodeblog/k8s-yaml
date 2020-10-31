@@ -69,6 +69,15 @@ kubectl get endpoints
 kubectl describe endpoints alpaca-prod
 
 # Publishing a service (从集群外访问服务）
+# https://kubernetes.io/docs/concepts/services-networking/service/#publishing-services-service-types
+#
+#默认为ClusterIP，集群内部IP，只能集群内访问。
+#NodePort，通过任意的NodeIP和NodePort来访问。
+#LoadBalancer，用云供应商的负载均衡实例。
+#ExternalName, 类似DNS的CNAME记录。
+#Ingress，通过外部端点访问集群。
+
+
 
 
 

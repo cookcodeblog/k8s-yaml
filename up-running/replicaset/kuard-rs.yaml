@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: ReplicaSet
+metadata:
+  name: kuard
+  labels:
+    app: kuard
+    version: "2"
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: kuard
+      version: "2"
+  template:
+    metadata:
+      labels:
+        app: kuard
+        version: "2"
+    spec:
+      containers:
+        - name: kuard
+          image: "registry.cn-shenzhen.aliyuncs.com/cookcodeblog/kuard-amd64:2"
+
