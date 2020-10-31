@@ -20,4 +20,15 @@ spec:
       containers:
         - name: kuard
           image: "registry.cn-shenzhen.aliyuncs.com/cookcodeblog/kuard-amd64:2"
+          ports:
+            - containerPort: 8080
+              name: http
+              protocol: TCP
+          resources:
+            requests:
+              cpu: "500m"
+              memory: "128Mi"
+            limits:
+              cpu: "1000m"
+              memory: "256Mi"
 
