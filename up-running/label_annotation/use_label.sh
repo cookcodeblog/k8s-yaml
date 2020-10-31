@@ -1,3 +1,6 @@
+# https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/
+# https://kubernetes.io/docs/concepts/overview/working-with-objects/common-labels/
+
 
 # alpaca-prod
 # Flag --replicas has been deprecated, has no effect and will be removed in the future.
